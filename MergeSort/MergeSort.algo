@@ -1,0 +1,30 @@
+//Merge Sort Algorithm
+// calling function for first time as MergeSort(A,1,n)
+MergeSort(A,p,r)
+  if p < r
+  then
+    q = floor((r-p)/2)
+    MergeSort(A,p,q)
+    MergeSort(A,q+1,r)
+    Merge(A,p,q,r)
+ 
+ 
+Merge(A,p,q,r)
+  n1 = q-p+1
+  n2 = r-q
+  create arrays L[1...n1+1] and R[1...n2+1]
+  for i in 1 to n1
+    L[i] = A[p+i-1]
+  for i in 1 to n2
+    R[i] = A[q+i]
+  L[n1+1] = Infinity
+  R[n2+1] = Infinity
+  i=0
+  j=0
+  for k in p to r
+    if L[i] <= R[j]
+      A[k] = L[i]
+      i=i+1 
+    else 
+      A[k] = R[j]
+      j = j+1
