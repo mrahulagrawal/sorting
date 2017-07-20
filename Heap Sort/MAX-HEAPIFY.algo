@@ -1,0 +1,11 @@
+MAX-HEAPIFY(A, i )
+ l ← LEFT(i )
+ r ← RIGHT(i )
+ if l ≤ heap-size[A] and A[l] > A[i ]
+ then largest ←l
+ else largest ←i
+ if r ≤ heap-size[A] and A[r] > A[largest]
+ then largest ←r
+ if largest = i
+ then exchange A[i ] ↔ A[largest]
+ MAX-HEAPIFY(A, largest)
